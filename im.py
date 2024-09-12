@@ -1,6 +1,7 @@
 import streamlit as st
 import base64
 from datetime import datetime
+import streamlit.components.v1 as components
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
@@ -57,3 +58,11 @@ st.markdown(f"""
         </div>
     </div>
 """, unsafe_allow_html=True)
+
+
+
+components.html("""
+    <script>
+        console.log('من برای تو ام و تو برای منی و هیچکس و هیچ چیز نمیتونه مارو از هم جدا کنه');
+    </script>
+""")
