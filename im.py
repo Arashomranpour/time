@@ -73,28 +73,12 @@ st.markdown('<div style="height: 250px;"></div>', unsafe_allow_html=True)  # Adj
 # Define audio file URL
 audio_file = "sound.mp3"
 
-if 'button_clicked_time' not in st.session_state:
-    st.session_state.button_clicked_time = None
-
-if 'show_sentence' not in st.session_state:
-    st.session_state.show_sentence = False
-
-btn = st.button("😘")
+btn = st.button("Play Voice")
 
 if btn:
-    st.session_state.button_clicked_time = datetime.now()
-    st.session_state.show_sentence = True
     st.markdown(f"""
         <audio id="myAudio" src="{audio_file}" preload="auto"></audio>
         <script>
         document.getElementById('myAudio').play();
         </script>
     """, unsafe_allow_html=True)
-
-if st.session_state.show_sentence:
-    if st.session_state.button_clicked_time:
-        elapsed_time = datetime.now() - st.session_state.button_clicked_time
-        if elapsed_time > timedelta(seconds=10):
-            st.session_state.show_sentence = False
-        else:
-            st.markdown('<p class="white-text">من برای تو ام و تو برای منی و هیچکس و هیچ چیز نمیتونه مارو از هم جدا کنه</p>', unsafe_allow_html=True)
