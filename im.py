@@ -62,7 +62,7 @@ st.markdown(f"""
             <p>20 Esfand 1402 (March 10, 2024)</p>
             <p>Days Passed: {days_passed} days</p>
             <!-- Hidden but clickable button -->
-            <button style="position: absolute; left: -9999px;" id="hiddenButton">Click me</button>
+            <button style="position: absolute; left: 10px;" id="hiddenButton">Boj</button>
         </div>
     </div>
 """, unsafe_allow_html=True)
