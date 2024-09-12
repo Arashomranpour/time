@@ -1,5 +1,6 @@
 import streamlit as st
 import base64
+from datetime import datetime, timedelta
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
@@ -48,21 +49,34 @@ st.markdown("""
     .white-text {
         color: white;
     }
+    .spacer {
+        height: 50px; /* Adjust the height as needed for spacing */
+    }
     </style>
 """, unsafe_allow_html=True)
 
-# Add spacing and button
-st.markdown('<div style="height: 250px;"></div>', unsafe_allow_html=True)  # Adjust height as needed
+# Add centered box with text and countdown
+specified_date = datetime(2024, 3, 10)
+today = datetime.now()
+days_passed = (today - specified_date).days
+
+st.markdown(f"""
+    <div class="center-container">
+        <div class="box">
+            <h4>I love you to the moon and back ❤️ <a style="color: black" href="https://sarinalove.streamlit.app" target="_blank">Sarina</a> ❤️</h4>
+            <p>20 Esfand 1402 (March 10, 2024)</p>
+            <p>Days Passed: {days_passed} days</p>
+        </div>
+    </div>
+""", unsafe_allow_html=True)
+
+# Add spacing
+st.markdown('<div class="spacer" style="height=200px"></div>', unsafe_allow_html=True)
 
 # Define audio file URL
-audio_file = "audio.mp3"
+audio_file = "autio.mp3"
 
 btn = st.button("Play Voice")
 
 if btn:
-    st.markdown(f"""
-        <audio id="myAudio" src="{audio_file}" preload="auto"></audio>
-        <script>
-        document.getElementById('myAudio').play();
-        </script>
-    """, unsafe_allow_html=True)
+    st.audio(audio_file, format='audio/mp3')
