@@ -66,7 +66,7 @@ components.html("""
     <script>
         Toastify({
             text: "من برای تو ام و تو برای منی و هیچکس و هیچ چیز نمیتونه مارو از هم جدا کنه",
-            duration: 5000,  // Duration in milliseconds
+            duration: 50000,  // Duration in milliseconds
             close: true,     // Show close button
             gravity: "top",  // Display at the top
             position: "center",  // Center position
