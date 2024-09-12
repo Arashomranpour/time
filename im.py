@@ -49,9 +49,6 @@ st.markdown("""
     .white-text {
         color: white;
     }
-    .spacer {
-        height: 50px; /* Adjust the height as needed for spacing */
-    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -70,13 +67,34 @@ st.markdown(f"""
     </div>
 """, unsafe_allow_html=True)
 
-# Add spacing
-st.markdown('<div class="spacer" style="height=200px"></div>', unsafe_allow_html=True)
+# Add spacing and button
+st.markdown('<div style="height: 250px;"></div>', unsafe_allow_html=True)  # Adjust height as needed
 
 # Define audio file URL
-audio_file = "autio.mp3"
+audio_file = "sound.mp3"
 
-btn = st.button("Play Voice")
+if 'button_clicked_time' not in st.session_state:
+    st.session_state.button_clicked_time = None
+
+if 'show_sentence' not in st.session_state:
+    st.session_state.show_sentence = False
+
+btn = st.button("😘")
 
 if btn:
-    st.audio(audio_file, format='audio/mp3')
+    st.session_state.button_clicked_time = datetime.now()
+    st.session_state.show_sentence = True
+    st.markdown(f"""
+        <audio id="myAudio" src="{audio_file}" preload="auto"></audio>
+        <script>
+        document.getElementById('myAudio').play();
+        </script>
+    """, unsafe_allow_html=True)
+
+if st.session_state.show_sentence:
+    if st.session_state.button_clicked_time:
+        elapsed_time = datetime.now() - st.session_state.button_clicked_time
+        if elapsed_time > timedelta(seconds=10):
+            st.session_state.show_sentence = False
+        else:
+            st.markdown('<p class="white-text">من برای تو ام و تو برای منی و هیچکس و هیچ چیز نمیتونه مارو از هم جدا کنه</p>', unsafe_allow_html=True)
