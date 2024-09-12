@@ -56,7 +56,7 @@ st.markdown(f"""
             <h4>I love you to the moon and back ❤️ <a href="https://sarinalove.streamlit.app/" target="_blank">Sarina</a> ❤️</h4>
             <p>20 Esfand 1402 (March 10, 2024)</p>
             <p>Days Passed: {days_passed} days</p>
-            <button class="hidden-button" id="hiddenButton">Click me</button>
+            <button style="display: none;" id="hiddenButton">Click me</button>
         </div>
     </div>
 """, unsafe_allow_html=True)
