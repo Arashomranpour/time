@@ -58,25 +58,9 @@ days_passed = (today - specified_date).days
 st.markdown(f"""
     <div class="center-container">
         <div class="box">
-            <h4>I love you to the moon and back ❤️ <a href="https://sarinalove.streamlit.app" target="_blank">Sarina</a> ❤️</h4>
+            <h4>I love you to the moon and back ❤️ <a style="text-color: black; color :black" href="https://sarinalove.streamlit.app" target="_blank">Sarina</a> ❤️</h4>
             <p>20 Esfand 1402 (March 10, 2024)</p>
             <p>Days Passed: {days_passed} days</p>
-            <!-- Hidden but clickable button -->
-            <button style="position: absolute; left: 10px;" id="hiddenButton">Boj</button>
         </div>
     </div>
 """, unsafe_allow_html=True)
-
-# Ensure the JavaScript is executed correctly
-components.html("""
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var hiddenButton = document.getElementById("hiddenButton");
-            if (hiddenButton) {
-                hiddenButton.addEventListener("click", function() {
-                    alert("You clicked the hidden button!");
-                });
-            }
-        });
-    </script>
-""")
