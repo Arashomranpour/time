@@ -43,7 +43,7 @@ st.markdown("""
         height: auto;
     }
     a {
-        color: black; /* Use the same color as the surrounding text */
+        text-color: black; /* Use the same color as the surrounding text */
         text-decoration: none; /* Remove underline */
     }
     </style>
