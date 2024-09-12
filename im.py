@@ -1,7 +1,6 @@
 import streamlit as st
 import base64
 from datetime import datetime
-import streamlit.components.v1 as components
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
@@ -27,6 +26,7 @@ st.markdown("""
     <style>
     .center-container {
         display: flex;
+        flex-direction: column; /* Stack items vertically */
         justify-content: center; /* Centers horizontally */
         align-items: center;     /* Centers vertically */
         height: 100vh;           /* Full viewport height */
@@ -67,6 +67,9 @@ st.markdown(f"""
     </div>
 """, unsafe_allow_html=True)
 
+# Add spacing and button
+st.markdown('<div style="height: 50px;"></div>', unsafe_allow_html=True)  # Adjust height as needed
 btn = st.button("😘")
+
 if btn:
     st.markdown('<p class="white-text">من برای تو ام و تو برای منی و هیچکس و هیچ چیز نمیتونه مارو از هم جدا کنه</p>', unsafe_allow_html=True)
