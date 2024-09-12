@@ -1,6 +1,6 @@
 import streamlit as st
 import base64
-from datetime import datetime, timedelta
+from datetime import datetime
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
@@ -68,17 +68,8 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 # Add spacing and button
-st.markdown('<div style="height: 250px;"></div>', unsafe_allow_html=True)  # Adjust height as needed
-
-# Define audio file URL
-audio_file = "./audio.mp3"
-
+st.markdown('<div style="height: 50px;"></div>', unsafe_allow_html=True)  # Adjust height as needed
 btn = st.button("😘")
 
 if btn:
-    st.markdown(f"""
-        <audio id="myAudio" src="{audio_file}" preload="auto"></audio>
-        <script>
-        document.getElementById('myAudio').play();
-        </script>
-    """, unsafe_allow_html=True)
+    st.markdown('<p class="white-text">من برای تو ام و تو برای منی و هیچکس و هیچ چیز نمیتونه مارو از هم جدا کنه</p>', unsafe_allow_html=True)
