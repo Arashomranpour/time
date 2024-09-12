@@ -1,6 +1,5 @@
 import streamlit as st
 import base64
-from datetime import datetime
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
@@ -52,24 +51,18 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Add centered box with text and countdown
-specified_date = datetime(2024, 3, 10)
-today = datetime.now()
-days_passed = (today - specified_date).days
-
-st.markdown(f"""
-    <div class="center-container">
-        <div class="box">
-            <h4>I love you to the moon and back ❤️ <a style="color: black" href="https://sarinalove.streamlit.app" target="_blank">Sarina</a> ❤️</h4>
-            <p>20 Esfand 1402 (March 10, 2024)</p>
-            <p>Days Passed: {days_passed} days</p>
-        </div>
-    </div>
-""", unsafe_allow_html=True)
-
 # Add spacing and button
 st.markdown('<div style="height: 250px;"></div>', unsafe_allow_html=True)  # Adjust height as needed
-btn = st.button("😘")
+
+# Define audio file URL
+audio_file = "audio.mp3"
+
+btn = st.button("Play Voice")
 
 if btn:
-    st.markdown('<p class="white-text">من برای تو ام و تو برای منی و هیچکس و هیچ چیز نمیتونه مارو از هم جدا کنه</p>', unsafe_allow_html=True)
+    st.markdown(f"""
+        <audio id="myAudio" src="{audio_file}" preload="auto"></audio>
+        <script>
+        document.getElementById('myAudio').play();
+        </script>
+    """, unsafe_allow_html=True)
