@@ -54,7 +54,6 @@ specified_date = datetime(2024, 3, 10)
 today = datetime.now()
 days_passed = (today - specified_date).days
 
-# Replace Sarina text with a clickable link
 st.markdown(f"""
     <div class="center-container">
         <div class="box">
@@ -64,3 +63,7 @@ st.markdown(f"""
         </div>
     </div>
 """, unsafe_allow_html=True)
+
+btn=st.button("😘")
+if btn:
+    st.write("من برای تو ام و تو برای منی و هیچکس و هیچ چیز نمیتونه مارو از هم جدا کنه")
