@@ -68,7 +68,7 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 # Add spacing and button
-st.markdown('<div style="height: 50px;"></div>', unsafe_allow_html=True)  # Adjust height as needed
+st.markdown('<div style="height: 300px;"></div>', unsafe_allow_html=True)  # Adjust height as needed
 btn = st.button("😘")
 
 if btn:
