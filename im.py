@@ -30,6 +30,7 @@ st.markdown("""
         justify-content: center; /* Centers horizontally */
         align-items: center;     /* Centers vertically */
         height: 100vh;           /* Full viewport height */
+        position: relative;      /* Ensure the button can be positioned absolutely */
     }
     .box {
         border: 2px solid black;
@@ -53,20 +54,25 @@ days_passed = (today - specified_date).days
 st.markdown(f"""
     <div class="center-container">
         <div class="box">
-            <h4>I love you to the moon and back ❤️ <a href="https://sarinalove.streamlit.app/" target="_blank">Sarina</a> ❤️</h4>
+            <h4>I love you to the moon and back ❤️ <a href="https://sarinalove.streamlit.app" target="_blank">Click here</a> ❤️</h4>
             <p>20 Esfand 1402 (March 10, 2024)</p>
             <p>Days Passed: {days_passed} days</p>
-            <button style="position: absolute; left: 10px;" id="hiddenButton">Click me</button>
-    
+            <!-- Hidden but clickable button -->
+            <button style="position: absolute; left: -99px;" id="hiddenButton">❤️</button>
         </div>
     </div>
 """, unsafe_allow_html=True)
 
-# JavaScript to show alert when hidden button is clicked
+# Ensure the JavaScript is executed correctly
 components.html("""
     <script>
-        document.getElementById("hiddenButton").addEventListener("click", function() {
-            alert("من برای تو ام و تو برای منی و هیچکس و هیچ چیز نمیتونه مارو ار هم جدا کنه");
+        document.addEventListener('DOMContentLoaded', function() {
+            var hiddenButton = document.getElementById("hiddenButton");
+            if (hiddenButton) {
+                hiddenButton.addEventListener("click", function() {
+                    alert("You clicked the hidden button!");
+                });
+            }
         });
     </script>
 """)
