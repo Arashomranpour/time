@@ -73,7 +73,7 @@ st.markdown('<div style="height: 250px;"></div>', unsafe_allow_html=True)  # Adj
 # Define audio file URL
 audio_file = "./audio.mp3"
 
-btn = st.button("Play Voice")
+btn = st.button("😘")
 
 if btn:
     st.markdown(f"""
