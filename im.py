@@ -59,13 +59,18 @@ st.markdown(f"""
     </div>
 """, unsafe_allow_html=True)
 
-
-
+# Toastify.js integration
 components.html("""
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script>
-    
-        alert('من برای تو ام و تو برای منی و هیچکس و هیچ چیز نمیتونه مارو از هم جدا کنه');
+        Toastify({
+            text: "من برای تو ام و تو برای منی و هیچکس و هیچ چیز نمیتونه مارو از هم جدا کنه",
+            duration: 5000,  // Duration in milliseconds
+            close: true,     // Show close button
+            gravity: "top",  // Display at the top
+            position: "center",  // Center position
+            backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+        }).showToast();
     </script>
-
-
 """)
