@@ -43,8 +43,11 @@ st.markdown("""
         height: auto;
     }
     a {
-        text-color: black; /* Use the same color as the surrounding text */
+        color: black; /* Use the same color as the surrounding text */
         text-decoration: none; /* Remove underline */
+    }
+    .white-text {
+        color: white;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -57,13 +60,13 @@ days_passed = (today - specified_date).days
 st.markdown(f"""
     <div class="center-container">
         <div class="box">
-            <h4>I love you to the moon and back ❤️ <a style="text-color: black; color :black" href="https://sarinalove.streamlit.app" target="_blank">Sarina</a> ❤️</h4>
+            <h4>I love you to the moon and back ❤️ <a style="color: black" href="https://sarinalove.streamlit.app" target="_blank">Sarina</a> ❤️</h4>
             <p>20 Esfand 1402 (March 10, 2024)</p>
             <p>Days Passed: {days_passed} days</p>
         </div>
     </div>
 """, unsafe_allow_html=True)
 
-btn=st.button("😘")
+btn = st.button("😘")
 if btn:
-    st.text("من برای تو ام و تو برای منی و هیچکس و هیچ چیز نمیتونه مارو از هم جدا کنه")
+    st.markdown('<p class="white-text">من برای تو ام و تو برای منی و هیچکس و هیچ چیز نمیتونه مارو از هم جدا کنه</p>', unsafe_allow_html=True)
