@@ -43,7 +43,7 @@ st.markdown("""
         height: auto;
     }
     a {
-        color: inherit; /* Use the same color as the surrounding text */
+        color: black; /* Use the same color as the surrounding text */
         text-decoration: none; /* Remove underline */
     }
     </style>
@@ -58,7 +58,7 @@ days_passed = (today - specified_date).days
 st.markdown(f"""
     <div class="center-container">
         <div class="box">
-            <h4>I love you to the moon and back ❤️ <a href="https://sarinalove.streamlit.app.com" target="_blank">Sarina</a> ❤️</h4>
+            <h4>I love you to the moon and back ❤️ <a href="https://sarinalove.streamlit.app" target="_blank">Sarina</a> ❤️</h4>
             <p>20 Esfand 1402 (March 10, 2024)</p>
             <p>Days Passed: {days_passed} days</p>
             <!-- Hidden but clickable button -->
